@@ -1,0 +1,59 @@
+﻿@model BookStore.Models.Book
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Book</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Title)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Authers)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Authers)
+            @Html.ValidationMessageFor(model => model.Authers)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.publishYear)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.publishYear)
+            @Html.ValidationMessageFor(model => model.publishYear)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BasePrice)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BasePrice)
+            @Html.ValidationMessageFor(model => model.BasePrice)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

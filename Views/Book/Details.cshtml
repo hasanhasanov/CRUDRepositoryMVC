@@ -1,0 +1,43 @@
+﻿@model BookStore.Models.Book
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Book</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Authers)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Authers)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.publishYear)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.publishYear)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BasePrice)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BasePrice)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
